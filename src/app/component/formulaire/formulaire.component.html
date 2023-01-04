@@ -1,0 +1,24 @@
+<form (ngSubmit)="register()">
+    <div>
+        <label>Login</label>
+        <input name="login"  [(ngModel)]="log">
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="password"  [(ngModel)]="pwd">
+    </div>
+    <button type="submit">Envoyer</button>
+</form>
+
+<hr>
+
+<ul>
+    <li *ngFor="let el of userArray">{{el}}</li>
+</ul>
+
+    <!-- <h2>Liste</h2>
+    <div *ngIf="messageService.messages.length">
+    <button type="button" class="clear" (click)="messageService.clear()">Clear messages</button>
+    <div *ngFor='let message of messageService.messages'> {{message}} </div>
+
+</div> -->

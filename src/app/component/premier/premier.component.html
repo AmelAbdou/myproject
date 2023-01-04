@@ -1,0 +1,54 @@
+<h1>Bonjour</h1>
+<p> il y a {{etudiants}} élèves</p>
+<p> le directeur se nomme : {{dir.prenom}}</p>
+<p> l'utilisateur se nomme {{user.name}}</p>
+<h1 (click)="afficheMessage('coucou')">Bonjour</h1>
+<br>
+<button (click)="goTo()">GoTo</button>
+<div (click)="afficheMessage1('parent', $event)">
+    Message parent <br>
+    <span (click)="afficheMessage1('enfant', $event)">Message enfant</span> <!--even fait partie de angular core-->
+</div>
+
+
+<ul *ngIf='8>1'>
+    <li>message</li>
+    <li>message</li>
+    <li>message</li>
+</ul>
+
+
+
+<h2 *ngIf="age > 18">coucou</h2>
+
+<ul>
+    <li *ngFor="let valeur of quantites">{{valeur}}</li>
+</ul>
+
+<ul>
+    <li *ngFor="let valeur of quantites; let indice=index ">{{indice}}, {{valeur}}</li>
+</ul>
+
+<ul>
+    <li *ngFor="let user of users; let indice=index ">{{indice}}, {{user.id}}, {{user.name}}, {{user.email}}</li>
+</ul>
+
+<ul>
+    <li *ngFor="let item of data">{{item.id}}, {{item.name}}, {{item.address.streetName}}, {{item.address.streetId}}
+        <ul>
+            <li *ngFor="let item1 of item.projets">{{item1.libelle}}, {{item1.description}}</li>
+        </ul>
+    </li>
+</ul>
+
+<div [ngSwitch]="position">
+    <p *ngSwitchCase="1">Premier</p>
+    <p *ngSwitchCase="2">Second</p>
+    <p *ngSwitchDefault>Pas dans les premiers</p>
+</div>
+
+<div class="red">Salut je suis rouge.</div>
+
+<ul *ngFor="let user of users">
+    <li [ngClass]="user.id! % 2 == 0 ? 'blue': 'red'"> {{user.id}}</li>
+</ul>
